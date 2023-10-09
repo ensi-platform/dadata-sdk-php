@@ -9,7 +9,8 @@
         "ext-mbstring": "*",
         "guzzlehttp/guzzle": "^6.2 || ^7.0",
         "symfony/http-foundation": "^5.0 || ^6.0",
-        "guzzlehttp/psr7": "^1.6.1 || ^2.4"
+        "guzzlehttp/psr7": "^1.6.1 || ^2.4",
+        "webmozart/assert": "^1.11"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.2"

@@ -31,7 +31,7 @@ abstract class BaseApi
      * @throws ApiException
      * @throws GuzzleException
      */
-    protected function send(RequestBuilder $request, Closure $fn)
+    protected function send(RequestBuilder $request, Closure $fn): mixed
     {
         try {
             $response = $this->client->send($request->build($this->config, $this->client));
