@@ -2,15 +2,15 @@
 
 namespace Ensi\DaDataClient;
 
+use InvalidArgumentException;
+
 class Configuration
 {
     private static Configuration $defaultConfiguration;
 
     protected ?string $apiKey = null;
     protected ?string $secretKey = null;
-
-    /** @var string The host */
-    protected string $host = 'https://suggestions.dadata.ru';
+    protected string $suggestionsHost = 'https://suggestions.dadata.ru';
 
     /** @var string User agent of the HTTP request, set to "Ensi/1.0.0/PHP" by default */
     protected string $userAgent = 'Ensi/1.0.0/PHP';
@@ -39,16 +39,16 @@ class Configuration
         return $this->apiKey;
     }
 
-    public function setHost(string $host): static
+    public function setSuggestionsHost(string $host): static
     {
-        $this->host = $host;
+        $this->suggestionsHost = $host;
 
         return $this;
     }
 
-    public function getHost(): string
+    public function getSuggestionsHost(): string
     {
-        return $this->host;
+        return $this->suggestionsHost;
     }
 
     public function setUserAgent(string $userAgent): static
@@ -75,5 +75,13 @@ class Configuration
     public static function setDefaultConfiguration(Configuration $config): void
     {
         self::$defaultConfiguration = $config;
+    }
+
+    public function getHost(string $hostTypeEnum): string
+    {
+        return match ($hostTypeEnum) {
+            DaDataHostEnum::SUGGESTIONS => $this->getSuggestionsHost(),
+            default => throw new InvalidArgumentException("Host type {$hostTypeEnum} not found"),
+        };
     }
 }

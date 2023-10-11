@@ -34,7 +34,7 @@ abstract class BaseApi
     protected function send(RequestBuilder $request, Closure $fn): mixed
     {
         try {
-            $response = $this->client->send($request->build($this->config, $this->client));
+            $response = $this->client->send($request->build($this->config, $this->getHost()));
         } catch (RequestException $e) {
             throw new ApiException("[{$e->getCode()}] {$e->getMessage()}", $e->getCode(), $e->getResponse());
         }
@@ -45,7 +45,7 @@ abstract class BaseApi
     protected function sendAsync(RequestBuilder $request, Closure $fn): PromiseInterface
     {
         return $this->client
-            ->sendAsync($request->build($this->config, $this->client))
+            ->sendAsync($request->build($this->config, $this->getHost()))
             ->then(
                 function ($response) use ($fn, $request) {
                     return $fn($this->deserialize($response));
@@ -64,4 +64,11 @@ abstract class BaseApi
     {
         return json_decode((string)$response->getBody(), true);
     }
+
+    protected function getHost(): string
+    {
+        return $this->config->getHost($this->getHostTypeEnum());
+    }
+
+    abstract protected function getHostTypeEnum(): string;
 }

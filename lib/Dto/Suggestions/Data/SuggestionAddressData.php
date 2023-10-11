@@ -2,7 +2,7 @@
 
 namespace Ensi\DaDataClient\Dto\Suggestions\Data;
 
-use Ensi\DaDataClient\Dto\BaseBodyDto;
+use Ensi\DaDataClient\Dto\BaseDto;
 
 /**
  * @property string|null $postal_code Индекс
@@ -105,7 +105,7 @@ use Ensi\DaDataClient\Dto\BaseBodyDto;
  * @property string|null $timezone Часовой пояс
  * @property MetroDto[]|null $metro Список ближайших станций метро (до трёх штук)
  */
-class SuggestionAddressData extends BaseBodyDto
+class SuggestionAddressData extends BaseDto
 {
     public function __construct(array $attributes = [])
     {

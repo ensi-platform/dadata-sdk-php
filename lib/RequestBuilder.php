@@ -3,7 +3,6 @@
 namespace Ensi\DaDataClient;
 
 use Ensi\DaDataClient\Dto\BaseRequestDto;
-use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Psr7\Query;
 use GuzzleHttp\Psr7\Request;
 
@@ -64,13 +63,13 @@ class RequestBuilder
         return $this;
     }
 
-    public function build(Configuration $config, ClientInterface $client): Request
+    public function build(Configuration $config, string $host): Request
     {
         $query = Query::build($this->queryParams);
 
         return new Request(
             $this->method,
-            $config->getHost() . $this->resourcePath . ($query ? "?{$query}" : ''),
+            $host . $this->resourcePath . ($query ? "?{$query}" : ''),
             array_merge(
                 $this->headerParams,
                 $this->getDefaultHeaders($config),
@@ -92,7 +91,7 @@ class RequestBuilder
     protected function getAuthHeaders(Configuration $config): array
     {
         return [
-            'Authorization' => $config->getApiKey(),
+            'Authorization' => "Token {$config->getApiKey()}",
             'X-Secret' => $config->getSecretKey(),
         ];
     }

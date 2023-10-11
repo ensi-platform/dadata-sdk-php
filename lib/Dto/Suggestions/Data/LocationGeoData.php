@@ -2,7 +2,7 @@
 
 namespace Ensi\DaDataClient\Dto\Suggestions\Data;
 
-use Ensi\DaDataClient\Dto\BaseBodyDto;
+use Ensi\DaDataClient\Dto\BaseDto;
 use Webmozart\Assert\Assert;
 
 /**
@@ -14,7 +14,7 @@ use Webmozart\Assert\Assert;
  * @property float $lon Географическая долгота
  * @property int $radius_meters Радиус поиска в метрах (по умолчанию – 100, максимум – 100000)
  */
-class LocationGeoData extends BaseBodyDto
+class LocationGeoData extends BaseDto
 {
     public const MAX_RADIUS_METERS = 100_000;
 
