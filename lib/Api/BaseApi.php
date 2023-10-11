@@ -8,10 +8,10 @@ use Ensi\DaDataClient\Configuration;
 use Ensi\DaDataClient\RequestBuilder;
 use GuzzleHttp\Client;
 use GuzzleHttp\ClientInterface;
+use GuzzleHttp\Exception\GuzzleException;
 use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\Promise\PromiseInterface;
 use Psr\Http\Message\ResponseInterface;
-use GuzzleHttp\Exception\GuzzleException;
 
 abstract class BaseApi
 {

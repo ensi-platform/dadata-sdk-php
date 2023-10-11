@@ -11,7 +11,7 @@ use Webmozart\Assert\Assert;
 
 /**
  * @property string $query Текст запроса
- * @property integer $count Количество результатов (максимум 20)
+ * @property int $count Количество результатов (максимум 20)
  * @property string $language На каком языке вернуть результат (see: LanguageEnum)
  * @property string $division Административное либо муниципальное деление (see: DivisionEnum)
  * @property LocationData[] $locations Ограничение по сектору

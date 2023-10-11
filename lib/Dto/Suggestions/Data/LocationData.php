@@ -17,7 +17,7 @@ use Webmozart\Assert\Assert;
  * @property string $street Название улицы
  * @property float $lat Географическая широта
  * @property float $lon Географическая долгота
- * @property integer $radius_meters Радиус поиска в метрах (по умолчанию – 100, максимум – 100000)
+ * @property int $radius_meters Радиус поиска в метрах (по умолчанию – 100, максимум – 100000)
  * @property string $region_type_full Полный тип региона
  * @property string $area_type_full Полный тип района в регионе
  * @property string $city_type_full Полный тип города
