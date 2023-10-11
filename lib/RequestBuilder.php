@@ -73,27 +73,27 @@ class RequestBuilder
             $config->getHost() . $this->resourcePath . ($query ? "?{$query}" : ''),
             array_merge(
                 $this->headerParams,
-                $this->getDefaultHeaders($config, $client),
+                $this->getDefaultHeaders($config),
             ),
             $this->body
         );
     }
 
-    protected function getDefaultHeaders(Configuration $config, ClientInterface $client): array
+    protected function getDefaultHeaders(Configuration $config): array
     {
         $headers = [];
         if ($config->getUserAgent()) {
             $headers['User-Agent'] = $config->getUserAgent();
         }
 
-        return array_merge($headers, $this->getAuthHeaders($config, $client));
+        return array_merge($headers, $this->getAuthHeaders($config));
     }
 
-    protected function getAuthHeaders(Configuration $config, ClientInterface $client): array
+    protected function getAuthHeaders(Configuration $config): array
     {
         return [
-            'Authorization' => $config->getApiKey(DaDataKeyEnum::API_KEY),
-            'X-Secret' => $config->getApiKey(DaDataKeyEnum::SECRET_KEY),
+            'Authorization' => $config->getApiKey(),
+            'X-Secret' => $config->getSecretKey(),
         ];
     }
 }

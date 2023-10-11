@@ -6,8 +6,8 @@ class Configuration
 {
     private static Configuration $defaultConfiguration;
 
-    /** @var string[] Associate array to store API key(s) */
-    protected array $apiKeys = [];
+    protected ?string $apiKey = null;
+    protected ?string $secretKey = null;
 
     /** @var string The host */
     protected string $host = 'https://suggestions.dadata.ru';
@@ -15,16 +15,28 @@ class Configuration
     /** @var string User agent of the HTTP request, set to "Ensi/1.0.0/PHP" by default */
     protected string $userAgent = 'Ensi/1.0.0/PHP';
 
-    public function setApiKey(string $apiKeyIdentifier, string $key): static
+    public function setSecretKey(string $secret): static
     {
-        $this->apiKeys[$apiKeyIdentifier] = $key;
+        $this->secretKey = $secret;
 
         return $this;
     }
 
-    public function getApiKey(string $apiKeyIdentifier): ?string
+    public function getSecretKey(): ?string
     {
-        return $this->apiKeys[$apiKeyIdentifier] ?? null;
+        return $this->secretKey;
+    }
+
+    public function setApiKey(string $key): static
+    {
+        $this->apiKey = $key;
+
+        return $this;
+    }
+
+    public function getApiKey(): ?string
+    {
+        return $this->apiKey;
     }
 
     public function setHost(string $host): static
