@@ -91,6 +91,9 @@ class RequestBuilder
 
     protected function getAuthHeaders(Configuration $config, ClientInterface $client): array
     {
-        return [];
+        return [
+            'Authorization' => $config->getApiKey(DaDataKeyEnum::API_KEY),
+            'X-Secret' => $config->getApiKey(DaDataKeyEnum::SECRET_KEY),
+        ];
     }
 }

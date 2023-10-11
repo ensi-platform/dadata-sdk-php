@@ -9,17 +9,17 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 class SuggestionsApi extends BaseApi
 {
-    public function example(SearchSuggestionsRequest $request): SearchSuggestionsResponse
+    public function searchAddress(SearchSuggestionsRequest $request): SearchSuggestionsResponse
     {
-        return $this->send($this->exampleRequest($request), fn ($content) => new SearchSuggestionsResponse($content));
+        return $this->send($this->searchAddressRequest($request), fn ($content) => new SearchSuggestionsResponse($content));
     }
 
-    public function exampleAsync(SearchSuggestionsRequest $request): PromiseInterface
+    public function searchAddressAsync(SearchSuggestionsRequest $request): PromiseInterface
     {
-        return $this->sendAsync($this->exampleRequest($request), fn ($content) => new SearchSuggestionsResponse($content));
+        return $this->sendAsync($this->searchAddressRequest($request), fn ($content) => new SearchSuggestionsResponse($content));
     }
 
-    protected function exampleRequest(SearchSuggestionsRequest $requestDto): RequestBuilder
+    protected function searchAddressRequest(SearchSuggestionsRequest $requestDto): RequestBuilder
     {
         return (new RequestBuilder('/suggestions/api/4_1/rs/suggest/address', 'POST'))->json($requestDto);
     }
