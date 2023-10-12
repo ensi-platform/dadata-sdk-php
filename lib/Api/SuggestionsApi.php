@@ -2,6 +2,7 @@
 
 namespace Ensi\DaDataClient\Api;
 
+use Ensi\DaDataClient\DaDataHostEnum;
 use Ensi\DaDataClient\Dto\Suggestions\Requests\SearchSuggestionsRequest;
 use Ensi\DaDataClient\Dto\Suggestions\Responses\SearchSuggestionsResponse;
 use Ensi\DaDataClient\RequestBuilder;
@@ -22,5 +23,10 @@ class SuggestionsApi extends BaseApi
     protected function searchAddressRequest(SearchSuggestionsRequest $requestDto): RequestBuilder
     {
         return (new RequestBuilder('/suggestions/api/4_1/rs/suggest/address', 'POST'))->json($requestDto);
+    }
+
+    protected function getHostTypeEnum(): string
+    {
+        return DaDataHostEnum::SUGGESTIONS;
     }
 }

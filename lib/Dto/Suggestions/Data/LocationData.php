@@ -2,7 +2,7 @@
 
 namespace Ensi\DaDataClient\Dto\Suggestions\Data;
 
-use Ensi\DaDataClient\Dto\BaseBodyDto;
+use Ensi\DaDataClient\Dto\BaseDto;
 use Webmozart\Assert\Assert;
 
 /**
@@ -29,7 +29,7 @@ use Webmozart\Assert\Assert;
  * @property string $settlement_fias_id ФИАС-код населенного пункта
  * @property string $street_fias_id ФИАС-код улицы
  */
-class LocationData extends BaseBodyDto
+class LocationData extends BaseDto
 {
     public const MAX_RADIUS_METERS = 100_000;
 
