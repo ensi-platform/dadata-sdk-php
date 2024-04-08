@@ -22,12 +22,12 @@ use Webmozart\Assert\Assert;
  */
 class SearchSuggestionsRequest extends BaseBodyDto
 {
-    public const MAX_COUNT = 10;
+    public const MAX_COUNT = 20;
     public const MAX_LOCATIONS = 100;
 
     public function __construct(array $attributes = [])
     {
-        Assert::nullOrMaxCount($attributes['count'] ?? null, self::MAX_COUNT);
+        Assert::nullOrRange($attributes['count'] ?? null, 1, self::MAX_COUNT);
         Assert::nullOrMaxCount($attributes['locations'] ?? null, self::MAX_LOCATIONS);
 
         parent::__construct($attributes);
