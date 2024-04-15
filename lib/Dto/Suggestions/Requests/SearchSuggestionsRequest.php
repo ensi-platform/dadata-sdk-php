@@ -17,8 +17,8 @@ use Webmozart\Assert\Assert;
  * @property LocationData[] $locations Ограничение по сектору
  * @property LocationGeoData[] $locations_geo Ограничение по радиусу окружности
  * @property LocationBoostData[] $locations_boost Приоритет города при ранжировании
- * @property BoundData[] $from_bound Гранулярные подсказки
- * @property BoundData[] $to_bound Гранулярные подсказки
+ * @property BoundData $from_bound Гранулярные подсказки
+ * @property BoundData $to_bound Гранулярные подсказки
  */
 class SearchSuggestionsRequest extends BaseBodyDto
 {
@@ -36,7 +36,7 @@ class SearchSuggestionsRequest extends BaseBodyDto
         $this->mapAttributeToArray('locations_geo', LocationGeoData::class);
         $this->mapAttributeToArray('locations_boost', LocationBoostData::class);
 
-        $this->mapAttributeToArray('from_bound', BoundData::class);
-        $this->mapAttributeToArray('to_bound', BoundData::class);
+        $this->mapAttribute('from_bound', BoundData::class);
+        $this->mapAttribute('to_bound', BoundData::class);
     }
 }
