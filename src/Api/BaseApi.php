@@ -47,7 +47,7 @@ abstract class BaseApi
         return $this->client
             ->sendAsync($request->build($this->config, $this->getHost()))
             ->then(
-                function ($response) use ($fn, $request) {
+                function ($response) use ($fn) {
                     return $fn($this->deserialize($response));
                 },
                 function ($e) {

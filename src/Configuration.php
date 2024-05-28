@@ -6,7 +6,7 @@ use InvalidArgumentException;
 
 class Configuration
 {
-    private static Configuration $defaultConfiguration;
+    private static ?Configuration $defaultConfiguration = null;
 
     protected ?string $apiKey = null;
     protected ?string $secretKey = null;
