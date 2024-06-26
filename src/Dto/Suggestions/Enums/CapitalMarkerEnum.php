@@ -24,7 +24,7 @@ class CapitalMarkerEnum
 
     /**
      * Gets allowable values of the enum
-     * @return string[]
+     * @return int[]
      */
     public static function getAllowableEnumValues(): array
     {
@@ -39,7 +39,7 @@ class CapitalMarkerEnum
 
     /**
      * Gets allowable values and titles of the enum
-     * @return string[]
+     * @return array<int, string>
      */
     public static function getDescriptions(): array
     {

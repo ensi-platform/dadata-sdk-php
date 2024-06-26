@@ -78,7 +78,7 @@ abstract class BaseDto implements JsonSerializable
         $this->__set($key, new $class($value));
     }
 
-    public function jsonSerialize()
+    public function jsonSerialize(): array
     {
         return $this->attributes;
     }

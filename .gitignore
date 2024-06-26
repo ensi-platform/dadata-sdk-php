@@ -1,8 +1,17 @@
-# From laravel/laravel #
+# Project #
 ########################
+.php_cs.cache
+.php-cs-fixer.cache
+.huskyrc
+clients/*
+!clients/.gitkeep
+storage/ensi
+generated
+studio.json
+build
 /node_modules
 /vendor
-docker-compose.override.yml
+.phpunit.result.cache
 composer.lock
 composer.local.json
 Homestead.json
@@ -14,8 +23,10 @@ yarn-error.log
 ###################
 *.sublime-project
 *.sublime-workspace
-/.idea/
+/.idea
+/.vscode
 *.komodoproject
+.vscode
 
 # Static content #
 ###################
@@ -29,10 +40,7 @@ yarn-error.log
 !phpunit.xml
 !psalm.xml
 *.yml
-!.docker/docker-compose.yml
 *.txt
-!robots.txt
-!robots_*.txt
 *.wav
 *.mp3
 *.avi
@@ -75,9 +83,3 @@ ehthumbs.db
 Thumbs.db
 sftp-config.json
 auth.json
-
-# Project #
-###########
-.php_cs.cache
-.php-cs-fixer.cache
-studio.json

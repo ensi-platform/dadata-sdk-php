@@ -1,8 +1,6 @@
 #!/bin/bash
 
-# В данном хуке выполняется
-# - composer install если был изменен composer.json
-# - npm install если был изменен package-lock.json
+# - 'composer update' if changed composer.json
 
 ESC_SEQ="\x1b["
 COL_RESET=$ESC_SEQ"39;49;00m"
@@ -16,6 +14,5 @@ check_run() {
     echo "$changed_files" | grep -q "$1" && echo " * changes detected in $1" && echo " * running $2" && eval "$2"
 }
 
-check_run composer.json "composer install"
-check_run package-lock.json "npm install"
+check_run composer.json "composer update"
 exit 0
