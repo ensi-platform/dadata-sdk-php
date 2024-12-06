@@ -6,6 +6,7 @@ use Ensi\DaDataClient\DaDataHostEnum;
 use Ensi\DaDataClient\Dto\Suggestions\Requests\SearchGeolocationsRequest;
 use Ensi\DaDataClient\Dto\Suggestions\Responses\SearchGeolocationsResponse;
 use Ensi\DaDataClient\RequestBuilder;
+use GuzzleHttp\Promise\PromiseInterface;
 
 class GeolocationsApi extends BaseApi
 {
