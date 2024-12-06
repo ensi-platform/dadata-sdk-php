@@ -6,14 +6,14 @@ use Ensi\DaDataClient\Dto\BaseBodyDto;
 use Webmozart\Assert\Assert;
 
 /**
- * @property float $lat Географическая широта
- * @property float $lon Географическая долгота
+ * @property float $lat - latitude
+ * @property float $lon - longitude
  *
- * @property int|null $count Количество результатов
- * @property int|null $radius_meters Радиус поиска в метрах
+ * @property int|null $count - count of results
+ * @property int|null $radius_meters - search radius in meters
  *
- * @property string|null $language На каком языке вернуть результат (see: LanguageEnum)
- * @property string|null $division Административное либо муниципальное деление (see: DivisionEnum)
+ * @property string|null $language - response language (see: LanguageEnum)
+ * @property string|null $division - administrative or municipal division (see: DivisionEnum)
  */
 class SearchGeolocationsRequest extends BaseBodyDto
 {
