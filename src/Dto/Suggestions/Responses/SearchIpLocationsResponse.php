@@ -6,7 +6,7 @@ use Ensi\DaDataClient\Dto\BaseResponseDto;
 use Ensi\DaDataClient\Dto\Suggestions\Data\SuggestionData;
 
 /**
- * @property SuggestionData[] $suggestions
+ * @property SuggestionData[] $location
  */
 class SearchIpLocationsResponse extends BaseResponseDto
 {
@@ -14,6 +14,6 @@ class SearchIpLocationsResponse extends BaseResponseDto
     {
         parent::__construct($attributes);
 
-        $this->mapAttributeToArray('suggestions', SuggestionData::class);
+        $this->mapAttribute('location', SuggestionData::class);
     }
 }
