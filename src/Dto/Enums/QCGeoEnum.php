@@ -1,6 +1,6 @@
 <?php
 
-namespace Ensi\DaDataClient\Dto\Suggestions\Data;
+namespace Ensi\DaDataClient\Dto\Enums;
 
 /**
  * Код точности координат

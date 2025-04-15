@@ -5,6 +5,7 @@ namespace Ensi\DaDataClient;
 class DaDataHostEnum
 {
     public const SUGGESTIONS = 'suggestions';
+    public const CLEAN = 'clean';
 
     /**
      * Gets allowable values of the enum
@@ -14,6 +15,7 @@ class DaDataHostEnum
     {
         return [
             self::SUGGESTIONS,
+            self::CLEAN,
         ];
     }
 
@@ -25,6 +27,7 @@ class DaDataHostEnum
     {
         return [
             self::SUGGESTIONS => 'API: подсказки по адресам',
+            self::CLEAN => 'API: стандартизация адресов',
         ];
     }
 }

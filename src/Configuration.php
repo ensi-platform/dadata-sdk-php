@@ -11,6 +11,7 @@ class Configuration
     protected ?string $apiKey = null;
     protected ?string $secretKey = null;
     protected string $suggestionsHost = 'https://suggestions.dadata.ru';
+    protected string $cleanHost = 'https://cleaner.dadata.ru';
 
     /** @var string User agent of the HTTP request, set to "Ensi/1.0.0/PHP" by default */
     protected string $userAgent = 'Ensi/1.0.0/PHP';
@@ -51,6 +52,18 @@ class Configuration
         return $this->suggestionsHost;
     }
 
+    public function setCleanHost(string $host): static
+    {
+        $this->cleanHost = $host;
+
+        return $this;
+    }
+
+    public function getCleanHost(): string
+    {
+        return $this->cleanHost;
+    }
+
     public function setUserAgent(string $userAgent): static
     {
         $this->userAgent = $userAgent;
@@ -81,6 +94,7 @@ class Configuration
     {
         return match ($hostTypeEnum) {
             DaDataHostEnum::SUGGESTIONS => $this->getSuggestionsHost(),
+            DaDataHostEnum::CLEAN => $this->getCleanHost(),
             default => throw new InvalidArgumentException("Host type {$hostTypeEnum} not found"),
         };
     }
