@@ -5,7 +5,7 @@ namespace Ensi\DaDataClient\Dto\Clean\Requests;
 use Ensi\DaDataClient\Dto\BaseBodyDto;
 
 /**
- * @property string $query Текст запроса
+ * @property string $query Query text
  */
 class SearchCleanAddressRequest extends BaseBodyDto
 {

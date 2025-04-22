@@ -6,7 +6,7 @@ use Ensi\DaDataClient\Dto\BaseResponseDto;
 use Ensi\DaDataClient\Dto\Clean\Data\CleanAddressData;
 
 /**
- * @property CleanAddressData $address Стандартизованный объект адреса
+ * @property CleanAddressData $address Standardized address object
  */
 class SearchCleanAddressResponse extends BaseResponseDto
 {

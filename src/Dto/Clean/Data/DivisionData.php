@@ -5,7 +5,7 @@ namespace Ensi\DaDataClient\Dto\Clean\Data;
 use Ensi\DaDataClient\Dto\BaseDto;
 
 /**
- * @property AdministrativeData $administrative Компоненты адреса в административном делении
+ * @property AdministrativeData $administrative Components of an address in an administrative division
  */
 class DivisionData extends BaseDto
 {

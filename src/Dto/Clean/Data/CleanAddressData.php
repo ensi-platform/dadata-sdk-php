@@ -6,101 +6,101 @@ use Ensi\DaDataClient\Dto\BaseDto;
 use Ensi\DaDataClient\Dto\Suggestions\Data\MetroDto;
 
 /**
- * @property string|null $source Исходный адрес одной строкой
- * @property string|null $result Стандартизированный адрес одной строкой
- * @property string|null $postal_code Индекс
- * @property string|null $country Страна
- * @property string|null $country_iso_code ISO-код страны (двухсимвольный)
- * @property string|null $federal_district Федеральный округ
- * @property string|null $region_fias_id ФИАС-код региона
- * @property string|null $region_kladr_id КЛАДР-код региона
- * @property string|null $region_iso_code ISO-код региона
- * @property string|null $region_with_type Регион с типом
- * @property string|null $region_type Тип региона (сокращенный)
- * @property string|null $region_type_full Тип региона
- * @property string|null $region Регион
- * @property string|null $area_fias_id ФИАС-код района в регионе
- * @property string|null $area_kladr_id КЛАДР-код района в регионе
- * @property string|null $area_with_type Район в регионе с типом
- * @property string|null $area_type Тип района в регионе (сокращенный)
- * @property string|null $area_type_full Тип района в регионе
- * @property string|null $area Район в регионе
- * @property string|null $city_fias_id ФИАС-код города
- * @property string|null $city_kladr_id КЛАДР-код города
- * @property string|null $city_with_type Город с типом
- * @property string|null $city_type Тип города (сокращенный)
- * @property string|null $city_type_full Тип города
- * @property string|null $city Город
- * @property string|null $city_area Административный округ (только для Москвы)
- * @property string|null $city_district_fias_id ФИАС-код адм. района города
- * @property string|null $city_district_with_type Адм. район города с типом
- * @property string|null $city_district_type Тип адм. района города (сокращенный)
- * @property string|null $city_district_type_full Тип адм. района города
- * @property string|null $city_district Адм. район города
- * @property string|null $settlement_fias_id ФИАС-код нас. пункта
- * @property string|null $settlement_kladr_id КЛАДР-код нас. пункта
- * @property string|null $settlement_with_type Населенный пункт с типом
- * @property string|null $settlement_type Тип населенного пункта (сокращенный)
- * @property string|null $settlement_type_full Тип населенного пункта
- * @property string|null $settlement Населенный пункт
- * @property string|null $street_fias_id ФИАС-код улицы
- * @property string|null $street_kladr_id КЛАДР-код улицы
- * @property string|null $street_with_type Улица с типом
- * @property string|null $street_type Тип улицы (сокращенный)
- * @property string|null $street_type_full Тип улицы
- * @property string|null $street Улица
- * @property string|null $stead_fias_id ФИАС-код земельного участка
- * @property string|null $stead_kladr_id КЛАДР-код земельного участка
- * @property string|null $stead_cadnum Кадастровый номер земельного участка
- * @property string|null $stead_type = «уч»
- * @property string|null $stead_type_full = «участок»
- * @property string|null $stead номер земельного участка
- * @property string|null $house_fias_id ФИАС-код дома
- * @property string|null $house_kladr_id КЛАДР-код дома
- * @property string|null $house_cadnum Кадастровый номер дома
- * @property string|null $house_type Тип дома (сокращенный)
- * @property string|null $house_type_full Тип дома
- * @property string|null $house Дом
- * @property string|null $house_flat_count Количество квартир в доме
- * @property string|null $block_type Тип корпуса/строения (сокращенный)
- * @property string|null $block_type_full Тип корпуса/строения
- * @property string|null $block Корпус/строение
- * @property string|null $entrance Подъезд
- * @property string|null $floor Этаж
- * @property string|null $flat_fias_id ФИАС-код квартиры
- * @property string|null $flat_cadnum Кадастровый номер квартиры
- * @property string|null $flat_type Тип квартиры (сокращенный)
- * @property string|null $flat_type_full Тип квартиры
- * @property string|null $flat Квартира
- * @property string|null $flat_area Площадь квартиры
- * @property string|null $square_meter_price Рыночная стоимость м²
- * @property string|null $flat_price Рыночная стоимость квартиры
- * @property string|null $postal_box Абонентский ящик
- * @property string|null $room_type Тип комнаты (сокращенный)
- * @property string|null $room_type_full Тип комнаты
- * @property string|null $room Комната
- * @property string|null $fias_id ФИАС-код (он же код ГАР) адреса для России. Идентификатор OpenStreetMap для Белоруссии, Казахстана и Узбекистана.
- * @property string|null $fias_level Уровень детализации, до которого адрес найден в ФИАС (ГАР) (see: FiasLevelEnum)
- * @property string|null $fias_actuality_state Признак актуальности адреса в ФИАС
- * @property string|null $kladr_id КЛАДР-код
- * @property string|null $geoname_id Идентификатор объекта в базе GeoNames. Для российских адресов не заполняется.
- * @property string|null $capital_marker Признак центра района или региона (see: CapitalMarkerEnum)
- * @property string|null $okato Код ОКАТО
- * @property string|null $oktmo Код ОКТМО
- * @property string|null $tax_office Код ИФНС для физических лиц
- * @property string|null $tax_office_legal Код ИФНС для организаций
- * @property string|null $timezone Часовой пояс
- * @property string|null $geo_lat Координаты: широта
- * @property string|null $geo_lon Координаты: долгота
- * @property string|null $beltway_hit Внутри кольцевой?
- * @property string|null $beltway_distance Расстояние от кольцевой в километрах
- * @property int|null $qc_geo Код точности координат (see: QCGeoEnum)
- * @property int|null $qc_complete Код пригодности к рассылке (see: QCCompleteEnum)
- * @property int|null $qc_house Признак наличия дома в ФИАС (see: QCHouseEnum)
- * @property int|null $qc Код проверки адреса (see:QCEnum)
- * @property string|null $unparsed_parts Нераспознанная часть адреса. Для адреса «Москва, Митинская улица, 40, вход с торца» вернет «ВХОД, С, ТОРЦА»
- * @property MetroDto[]|null $metro Список ближайших станций метро (до трёх штук)
- * @property DivisionData|null $divisions Компоненты адреса в административном делении
+ * @property string|null $source Source address in one line
+ * @property string|null $result Standardized address in one line
+ * @property string|null $postal_code Index
+ * @property string|null $country Country
+ * @property string|null $country_iso_code ISO country code (two-character)
+ * @property string|null $federal_district Federal District
+ * @property string|null $region_fias_id FIAS-region code
+ * @property string|null $region_kladr_id KLADR-region code
+ * @property string|null $region_iso_code ISO region code
+ * @property string|null $region_with_type Region with type
+ * @property string|null $region_type Region type (abbreviated)
+ * @property string|null $region_type_full Region type
+ * @property string|null $region Region
+ * @property string|null $area_fias_id FIAS-area code in the region
+ * @property string|null $area_kladr_id KLADR-area code in the region
+ * @property string|null $area_with_type A district in a region with the type
+ * @property string|null $area_type Type of area in the region (abbreviated)
+ * @property string|null $area_type_full Type of area in the region
+ * @property string|null $area The area in the region
+ * @property string|null $city_fias_id FIAS-area code
+ * @property string|null $city_kladr_id KLADR-area code
+ * @property string|null $city_with_type City with type
+ * @property string|null $city_type City type (abbreviated)
+ * @property string|null $city_type_full City type
+ * @property string|null $city City
+ * @property string|null $city_area Administrative District (for Moscow only)
+ * @property string|null $city_district_fias_id FIAS code of the administrator. city district
+ * @property string|null $city_district_with_type Administrative district of the city with the type
+ * @property string|null $city_district_type adm type. city district (abbreviated)
+ * @property string|null $city_district_type_full adm type. city district
+ * @property string|null $city_district Administrative district of the city
+ * @property string|null $settlement_fias_id FIAS code of our point
+ * @property string|null $settlement_kladr_id is the KLADR code of our point
+ * @property string|null $settlement_with_type Locality with type
+ * @property string|null $settlement_type Type of locality (abbreviated)
+ * @property string|null $settlement_type_full Type of locality
+ * @property string|null $settlement Locality
+ * @property string|null $street_fias_id FIAS street code
+ * @property string|null $street_kladr_id Street code
+ * @property string|null $street_with_type Street with type
+ * @property string|null $street_type Street type (abbreviated)
+ * @property string|null $street_type_full Street type
+ * @property string|null $street Street
+ * @property string|null $stead_fias_id FIAS-code of the land plot
+ * @property string|null $stead_kladr_id is the KLADR code of the land plot
+ * @property string|null $stead_cadnum Cadastral number of the land plot
+ * @property string|null $stead_type = "plot"
+ * @property string|null $stead_type_full = "plot"
+ * @property string|null $stead land plot number
+ * @property string|null $house_fias_id FIAS code of the house
+ * @property string|null $house_kladr_id KLADR-code of the house
+ * @property string|null $house_cadnum Cadastral number of the house
+ * @property string|null $house_type House type (abbreviated)
+ * @property string|null $house_type_full House type
+ * @property string|null $house House
+ * @property string|null $house_flat_count Number of apartments in the house
+ * @property string|null $block_type Type of building/building (abbreviated)
+ * @property string|null $block_type_full Type of building/building
+ * @property string|null $block Building/building
+ * @property string|null $entrance Entrance
+ * @property string|null $floor Floor
+ * @property string|null $flat_fias_id FIAS apartment code
+ * @property string|null $flat_cadnum Cadastral number of the apartment
+ * @property string|null $flat_type Apartment type (abbreviated)
+ * @property string|null $flat_type_full Apartment type
+ * @property string|null $flat Apartment
+ * @property string|null $flat_area Apartment area
+ * @property string|null $square_meter_price Market value m2
+ * @property string|null $flat_price The market value of the apartment
+ * @property string|null $postal_box Subscriber's mailbox
+ * @property string|null $room_type Room type (abbreviated)
+ * @property string|null $room_type_full Room type
+ * @property string|null $room Room
+ * @property string|null $fias_id is the FIAS code (also known as the GAR code) of the address for Russia. The OpenStreetMap identifier for Belarus, Kazakhstan, and Uzbekistan.
+ * @property string|null $fias_level The level of detail to which the address is found in FIAS (GAR) (see: FiasLevelEnum)
+ * @property string|null $fias_actuality_state Indicates that the address is up to date in FIAS
+ * @property string|null $kladr_id KLADR code
+ * @property string|null $geoname_id Object ID in the GeoNames database. It is not filled in for Russian addresses.
+ * @property string|null $capital_marker Indicates the center of the district or region (see: CapitalMarkerEnum)
+ * @property string|null $okato OKATO code
+ * @property string|null $oktmo OKTMO code
+ * @property string|null $tax_office Federal Tax Service code for individuals
+ * @property string|null $tax_office_legal Federal Tax Service code for organizations
+ * @property string|null $timezone Time zone
+ * @property string|null $geo_lat Coordinates: latitude
+ * @property string|null $geo_lon Coordinates: longitude
+ * @property string|null $beltway_hit Inside the ring road?
+ * @property string|null $beltway_distance Distance from the ring road in kilometers
+ * @property int|null $qc_geo Coordinate accuracy code (see: QCGeoEnum)
+ * @property int|null $qc_complete Mailing Suitability code (see: QCCompleteEnum)
+ * @property int|null $qc_house Indicates the presence of a house in FIAS (see: QCHouseEnum)
+ * @property int|null $qc Code address checks (see:QCEnum)
+ * @property string|null $uneqused_parts The unrecognized part of the address. For the address "Moscow, Mitinskaya street, 40, entrance from the end" will return "ENTRANCE, FROM the END"
+ * @property MetroDto[]|null $metro List of the nearest metro stations (up to three)
+ * @property DivisionData|null $divisions Address components in the administrative division
  */
 class CleanAddressData extends BaseDto
 {

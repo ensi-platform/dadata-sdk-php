@@ -5,11 +5,11 @@ namespace Ensi\DaDataClient\Dto\Clean\Data;
 use Ensi\DaDataClient\Dto\BaseDto;
 
 /**
- * @property DivisionUnitData|null $area Район региона
- * @property DivisionUnitData|null $city Город
- * @property DivisionUnitData|null $city_district Район города
- * @property DivisionUnitData|null $settlement Населенный пункт
- * @property DivisionUnitData|null $planning_structure Планировочная структура
+ * @property DivisionUnitData|null $area
+ * @property DivisionUnitData|null $city
+ * @property DivisionUnitData|null $city_district
+ * @property DivisionUnitData|null $settlement
+ * @property DivisionUnitData|null $planning_structure
  */
 class AdministrativeData extends BaseDto
 {

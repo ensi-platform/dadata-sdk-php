@@ -9,8 +9,8 @@ use Ensi\DaDataClient\RequestBuilder;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
- * Методы не входят в общую подписку. Оплачивается каждый обработанный запрос по API
- * Подробнее в документации: https://dadata.ru/pricing/?product=clean
+ * Methods are not included in the subscription. Each processed API request is paid for
+ * More details in the documentation: https://dadata.ru/pricing/?product=clean
  */
 class CleanApi extends BaseApi
 {
