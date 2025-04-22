@@ -3,7 +3,7 @@
 namespace Ensi\DaDataClient\Dto\Enums;
 
 /**
- * Признак качества
+ * Quality indicator
  */
 class QCEnum
 {

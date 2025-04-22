@@ -3,7 +3,7 @@
 namespace Ensi\DaDataClient\Dto\Enums;
 
 /**
- * Признак наличия дома в ФИАС
+ * Indicates the presence of a house in FIAS
  */
 class QCHouseEnum
 {

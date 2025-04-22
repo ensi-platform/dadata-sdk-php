@@ -3,7 +3,7 @@
 namespace Ensi\DaDataClient\Dto\Enums;
 
 /**
- * Код пригодности адреса для почтовой рассылки
+ * The address's suitability code for mailing
  */
 class QCCompleteEnum
 {
