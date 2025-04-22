@@ -3,9 +3,9 @@
 namespace Ensi\DaDataClient\Dto\Enums;
 
 /**
- * ФИАС-код (он же код ГАР) адреса для России.
- * Идентификатор OpenStreetMap для Белоруссии, Казахстана и Узбекистана.
- * Для остальных стран — не заполняется.
+ * FIAS code (aka GAR code) of the address for Russia.
+ * OpenStreetMap identifier for Belarus, Kazakhstan and Uzbekistan.
+ * For other countries — not filled.
  */
 class FiasLevelEnum
 {
@@ -41,28 +41,6 @@ class FiasLevelEnum
             self::PLANNING_STRUCTURE,
             self::LAND_PLOT,
             self::FOREIGN_OR_EMPTY,
-        ];
-    }
-
-    /**
-     * Gets allowable values and titles of the enum
-     * @return string[]
-     */
-    public static function getDescriptions(): array
-    {
-        return [
-            self::COUNTRY => 'Страна',
-            self::REGION => 'Регион',
-            self::AREA => 'Район',
-            self::CITY => 'Город',
-            self::CITY_AREA => 'Район города',
-            self::SETTLEMENT => 'Населенный пункт',
-            self::STREET => 'Улица',
-            self::HOUSE => 'Дом',
-            self::FLAT => 'Квартира или комната',
-            self::PLANNING_STRUCTURE => 'Планировочная структура',
-            self::LAND_PLOT => 'Земельный участок',
-            self::FOREIGN_OR_EMPTY => 'ИНостранный или пустой',
         ];
     }
 }

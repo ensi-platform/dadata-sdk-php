@@ -3,8 +3,8 @@
 namespace Ensi\DaDataClient\Dto\Enums;
 
 /**
- * Подсказки могут возвращать адрес в административном либо в муниципальном делении.
- * Если параметр не задан, используется административное деление.
+ * Hints can return an address in either an administrative or municipal division.
+ * If the parameter is not specified, the administrative division is used.
  */
 class DivisionEnum
 {
@@ -20,18 +20,6 @@ class DivisionEnum
         return [
             self::ADMINISTRATIVE,
             self::MUNICIPAL,
-        ];
-    }
-
-    /**
-     * Gets allowable values and titles of the enum
-     * @return string[]
-     */
-    public static function getDescriptions(): array
-    {
-        return [
-            self::ADMINISTRATIVE => 'Административное',
-            self::MUNICIPAL => 'Муниципальное',
         ];
     }
 }

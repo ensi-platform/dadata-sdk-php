@@ -18,16 +18,4 @@ class LanguageEnum
             self::EN,
         ];
     }
-
-    /**
-     * Gets allowable values and titles of the enum
-     * @return string[]
-     */
-    public static function getDescriptions(): array
-    {
-        return [
-            self::RU => 'Русский',
-            self::EN => 'Латиница',
-        ];
-    }
 }

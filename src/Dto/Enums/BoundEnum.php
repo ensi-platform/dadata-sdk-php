@@ -13,8 +13,8 @@ class BoundEnum
     public const HOUSE = 'house';
 
     /**
-     * Квартира поддерживается только как правая граница.
-     * То есть можно указать границы house-flat или street-flat, но не просто flat.
+     * Flat is supported only as a right boundary.
+     * That is, you can specify house-flat or street-flat boundaries, but not just flat.
      *
      * DaData 21.12+ ver.
      */
@@ -35,24 +35,6 @@ class BoundEnum
             self::STREET,
             self::HOUSE,
             self::FLAT,
-        ];
-    }
-
-    /**
-     * Gets allowable values and titles of the enum
-     * @return string[]
-     */
-    public static function getDescriptions(): array
-    {
-        return [
-            self::COUNTRY => 'Страна',
-            self::REGION => 'Регион',
-            self::AREA => 'Район',
-            self::CITY => 'Город',
-            self::SETTLEMENT => 'Населенный пункт',
-            self::STREET => 'Улица',
-            self::HOUSE => 'Дом',
-            self::FLAT => 'Квартира',
         ];
     }
 }

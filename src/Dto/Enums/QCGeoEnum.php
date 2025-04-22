@@ -3,7 +3,7 @@
 namespace Ensi\DaDataClient\Dto\Enums;
 
 /**
- * Код точности координат
+ * Coordinate precision code
  */
 class QCGeoEnum
 {
@@ -27,22 +27,6 @@ class QCGeoEnum
             self::SETTLEMENT,
             self::CITY,
             self::NOT_DEFINED,
-        ];
-    }
-
-    /**
-     * Gets allowable values and titles of the enum
-     * @return string[]
-     */
-    public static function getDescriptions(): array
-    {
-        return [
-            self::EXACT => 'Точные координаты',
-            self::HOUSE => 'Ближайший дом',
-            self::STREET => 'Улица',
-            self::SETTLEMENT => 'Населенный пункт',
-            self::CITY => 'Город',
-            self::NOT_DEFINED => 'Координаты не определены',
         ];
     }
 }
