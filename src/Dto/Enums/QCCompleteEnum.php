@@ -7,6 +7,7 @@ namespace Ensi\DaDataClient\Dto\Enums;
  */
 class QCCompleteEnum
 {
+    /** @var string Suitable for mailing */
     public const SUITABLE = "0";
     public const NO_REGION = "1";
     public const NO_CITY = "2";
@@ -15,8 +16,11 @@ class QCCompleteEnum
     public const NO_FLAT = "5";
     public const INCOMPLETE = "6";
     public const FOREIGN = "7";
+    /** @var string Suitable for emails, but not for courier delivery. */
     public const POSTAL_BOX = "8";
+    /** @var string Check if Dadata parsed the source address correctly */
     public const VERIFY_SOURCE = "9";
+    /** @var string There is no home in FIAS */
     public const NO_FIAS_HOUSE = "10";
 
     /**
@@ -37,27 +41,6 @@ class QCCompleteEnum
             self::POSTAL_BOX,
             self::VERIFY_SOURCE,
             self::NO_FIAS_HOUSE,
-        ];
-    }
-
-    /**
-     * Gets allowable values and titles of the enum
-     * @return string[]
-     */
-    public static function getDescriptions(): array
-    {
-        return [
-            self::SUITABLE => 'Пригоден для почтовой рассылки',
-            self::NO_REGION => 'Нет региона',
-            self::NO_CITY => 'Нет города',
-            self::NO_STREET => 'Нет улицы',
-            self::NO_HOUSE => 'Нет дома',
-            self::NO_FLAT => 'Нет квартиры. Подходит для юрлиц или частных владений',
-            self::INCOMPLETE => 'Адрес неполный',
-            self::FOREIGN => 'Иностранный адрес',
-            self::POSTAL_BOX => 'Абонентский ящик или до востребования. Подходит для писем, но не для курьерской доставки.',
-            self::VERIFY_SOURCE => 'Проверьте, правильно ли Дадата разобрала исходный адрес',
-            self::NO_FIAS_HOUSE => 'Дома нет в ФИАС',
         ];
     }
 }

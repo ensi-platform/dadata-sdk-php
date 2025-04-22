@@ -21,16 +21,4 @@ class QCHouseEnum
             self::NOT_FOUND_IN_FIAS,
         ];
     }
-
-    /**
-     * Gets allowable values and titles of the enum
-     * @return string[]
-     */
-    public static function getDescriptions(): array
-    {
-        return [
-            self::FOUND_IN_FIAS => 'Дом найден в ФИАС',
-            self::NOT_FOUND_IN_FIAS => 'Дом не найден в ФИАС',
-        ];
-    }
 }

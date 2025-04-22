@@ -7,9 +7,13 @@ namespace Ensi\DaDataClient\Dto\Enums;
  */
 class QCEnum
 {
+    /** @var string The address was recognized confidently */
     public const CONFIDENT = "0";
+    /** @var string The address is empty or obviously "garbage" */
     public const EMPTY_OR_TRASH = "2";
+    /** @var string The address contains extra parts or insufficient data */
     public const NEEDS_VERIFICATION = "1";
+    /** @var string There are alternative options */
     public const HAS_ALTERNATIVES = "3";
 
     /**
@@ -23,20 +27,6 @@ class QCEnum
             self::EMPTY_OR_TRASH,
             self::NEEDS_VERIFICATION,
             self::HAS_ALTERNATIVES,
-        ];
-    }
-
-    /**
-     * Gets descriptions for each qc code
-     * @return string[]
-     */
-    public static function getDescriptions(): array
-    {
-        return [
-            self::CONFIDENT => 'Адрес распознан уверенно',
-            self::EMPTY_OR_TRASH => 'Адрес пустой или заведомо «мусорный»',
-            self::NEEDS_VERIFICATION => 'Есть лишние части или недостаточно данных в адресе',
-            self::HAS_ALTERNATIVES => 'Есть альтернативные варианты',
         ];
     }
 }
