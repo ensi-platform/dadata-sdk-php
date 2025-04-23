@@ -98,7 +98,7 @@ use Ensi\DaDataClient\Dto\Suggestions\Data\MetroDto;
  * @property int|null $qc_complete Mailing Suitability code (see: QCCompleteEnum)
  * @property int|null $qc_house Indicates the presence of a house in FIAS (see: QCHouseEnum)
  * @property int|null $qc Code address checks (see:QCEnum)
- * @property string|null $uneqused_parts The unrecognized part of the address. For the address "Moscow, Mitinskaya street, 40, entrance from the end" will return "ENTRANCE, FROM the END"
+ * @property string|null $unparsed_parts The unrecognized part of the address. For the address "Moscow, Mitinskaya street, 40, entrance from the end" will return "ENTRANCE, FROM the END"
  * @property MetroDto[]|null $metro List of the nearest metro stations (up to three)
  * @property DivisionData|null $divisions Address components in the administrative division
  */
